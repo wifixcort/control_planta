@@ -65,6 +65,11 @@ void _auto(){
  // Serial.println(Y);
   // La señal de salida del controlador PID estándar
   float U = U1 + kp*((1+ Ts/Ti + Td/Ts)*E - (1 + (2*Td)/Ts)*E1 + (Td/Ts)*E2);
+  if(U > 1000){
+    U = 1000;
+  }else if(U < 0){
+    U = 0;
+  }
   Serial.println(U);
   // Para calcular errores y salidas del controlador pasadas  
   E2 = E1;
