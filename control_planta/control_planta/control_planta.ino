@@ -14,12 +14,12 @@
 float kp = 2.2405;
 float Ti = 0.08859;
 float Td = 0.008312;
-float Ts = 0.01;
+float Ts = 100;
 
-float E1;
-float E2;
-float U1;
-float U2;
+float E1 = 0;
+float E2 = 0;
+float U1 = 0;
+float U2 = 0;
 
 void setup() {
   // put your setup code here, to run once:
@@ -54,22 +54,24 @@ void _manual(){
 }// end manual
 
 void _auto(){
-  //uint16_t setpoint; // Setpoint for PID(AUTO MODE)
-  unsigned int setpoint = map(analogRead(A_SP_IN), 0, 1024, 0, 1000);
+  //uint16_t setpoint; 
+  unsigned int setpoint = map(analogRead(A_SP_IN), 0, 1024, 0, 1000);// Setpoint for PID(AUTO MODE)
   unsigned int Y = map(analogRead(V_OUT), 0, 1024, 0, 1000);
 
   // Calcular error 
   float E = setpoint - Y;
-  //Serial.print(setpoint);
-  //Serial.print("  ");
- // Serial.println(Y);
-  // La señal de salida del controlador PID estándar
+
+  // Señal de salida del controlador PID estándar
   float U = U1 + kp*((1+ Ts/Ti + Td/Ts)*E - (1 + (2*Td)/Ts)*E1 + (Td/Ts)*E2);
-  if(U > 1000){
+  if(U > 1000){// Saturación
     U = 1000;
   }else if(U < 0){
     U = 0;
   }
+  Serial.print(setpoint);
+  Serial.print("  ");
+  Serial.print(Y);  
+  Serial.print("  ");
   Serial.println(U);
   // Para calcular errores y salidas del controlador pasadas  
   E2 = E1;
@@ -80,4 +82,5 @@ void _auto(){
   unsigned int uk = map(U, 0, 1000, 0, 255);
   analogWrite(V_IN, uk);
   //Serial.println(uk);
+  delay(100);
 }// end auto

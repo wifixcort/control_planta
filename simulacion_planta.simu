@@ -10,7 +10,7 @@ Circuit Id: TextComponent-49
 
 Unique  Id: Potentiometer-51: 
 Circuit Id: Potentiometer-31
-<item id="Potentiometer-31" y="-224" vflip="1" labelx="-16" Show_res="true" circRot="6.95330875189484e-310" valLabRot="0" itemtype="Potentiometer" mainComp="false" rotation="-90" Unit=" kΩ" Resistance="10" objectName="Potentiometer-51" valLabely="-20" circPos="0,0" x="-544" boardRot="-1e+6" Value_Ohm="8450" boardPos="-1e+6,-1e+6" Show_id="false" hflip="1" valLabelx="10" labely="-40" labelrot="0"/>
+<item id="Potentiometer-31" y="-224" vflip="1" labelx="-16" Show_res="true" circRot="6.95330875189484e-310" valLabRot="0" itemtype="Potentiometer" mainComp="false" rotation="-90" Unit=" kΩ" Resistance="1" objectName="Potentiometer-51" valLabely="-20" circPos="0,0" x="-544" boardRot="-1e+6" Value_Ohm="483" boardPos="-1e+6,-1e+6" Show_id="false" hflip="1" valLabelx="10" labely="-40" labelrot="0"/>
 
 Unique  Id: Ground-50: 
 Circuit Id: Ground-32
@@ -18,7 +18,7 @@ Circuit Id: Ground-32
 
 Unique  Id: TextComponent-49: 
 Circuit Id: TextComponent-49
-<item id="TextComponent-49" y="-312" vflip="1" labelx="-16" Font_Size="9" Opacity="0" circRot="nan" valLabRot="0" itemtype="TextComponent" mainComp="false" rotation="0" objectName="TextComponent-49" Border="1" valLabely="0" circPos="0,0" x="-508" boardRot="-1e+6" boardPos="-1e+6,-1e+6" Show_id="false" Fixed_Width="true" Font="Helvetica [Cronyx]" hflip="1" valLabelx="0" Text="PID&#xa;Setpoint" labely="-24" labelrot="0" Margin="5"/>
+<item id="TextComponent-49" y="-296" vflip="1" labelx="-16" Font_Size="9" Opacity="0" circRot="nan" valLabRot="0" itemtype="TextComponent" mainComp="false" rotation="0" objectName="TextComponent-49" Border="1" valLabely="0" circPos="0,0" x="-484" boardRot="-1e+6" boardPos="-1e+6,-1e+6" Show_id="false" Fixed_Width="true" Font="Helvetica [Cronyx]" hflip="1" valLabelx="0" Text="PID&#xa;Setpoint" labely="-24" labelrot="0" Margin="5"/>
 
 Unique  Id: TextComponent-48: 
 Circuit Id: TextComponent-48
@@ -50,7 +50,7 @@ Circuit Id: Ground-32
 
 Unique  Id: Potentiometer-31: 
 Circuit Id: Potentiometer-31
-<item id="Potentiometer-31" y="-236" vflip="1" labelx="-16" Show_res="true" circRot="6.95330875189484e-310" valLabRot="0" itemtype="Potentiometer" mainComp="false" rotation="-90" Unit=" kΩ" Resistance="10" objectName="Potentiometer-31" valLabely="-20" circPos="0,0" x="-432" boardRot="-1e+6" Value_Ohm="6440" boardPos="-1e+6,-1e+6" Show_id="false" hflip="1" valLabelx="10" labely="-40" labelrot="0"/>
+<item id="Potentiometer-31" y="-236" vflip="1" labelx="-16" Show_res="true" circRot="6.95330875189484e-310" valLabRot="0" itemtype="Potentiometer" mainComp="false" rotation="-90" Unit=" kΩ" Resistance="1" objectName="Potentiometer-31" valLabely="-20" circPos="0,0" x="-432" boardRot="-1e+6" Value_Ohm="312" boardPos="-1e+6,-1e+6" Show_id="false" hflip="1" valLabelx="10" labely="-40" labelrot="0"/>
 
 Unique  Id: Rail-29: 
 Circuit Id: Rail-29
