@@ -13,8 +13,8 @@
 
 float kp = 2.2405;
 float Ti = 0.08859;
-float Td = 0;//0.008312;
-float Ts = 0.01;
+float Td = 0; //0.008312; // No se agrega por el ruido
+float Ts = 0.01; // 10ms
 
 float E1 = 0;
 float E2 = 0;
@@ -87,8 +87,8 @@ void _auto(){
   //Salida del controlador
   unsigned int uk = fmap(U, 0, 1000, 0, 254);
   analogWrite(V_IN, uk);
-  Serial.println(uk);
-  delay(10);
+  Serial.println(analogRead(A_SP_IN));
+  delay(10); // 10
 }// end auto
 
 //Funcion para cambiar de escala
