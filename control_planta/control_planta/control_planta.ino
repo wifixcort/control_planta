@@ -2,8 +2,8 @@
 
 // Declaración de variables
 #define V_OUT A0// Lectura tensión de salida
-#define A_SP_IN A1 // Analog setpoint input
-#define X_SIGNAL A2 // Entrada analógica en modo manual
+#define SP A1 // Analog setpoint input
+#define X A2 // Entrada analógica en modo manual
 #define M 8 // Input port M for manual/auto mode
 #define V_IN 9 // Vin para planta(Salida PWM)
 
@@ -48,14 +48,14 @@ void loop() {
 
 void _manual(){
   // Mapear señal manual a salida para evitar saturación
-  uint16_t manual_in = map(analogRead(X_SIGNAL), 0, 1023, 0 , 254);
+  uint16_t manual_in = map(analogRead(X), 0, 1023, 0 , 255);
   analogWrite(V_IN, manual_in);
-  Serial.println(manual_in);
+  //Serial.println(manual_in);
 }// end manual
 
 void _auto(){
   //uint16_t setpoint; 
-  float setpoint = fmap(analogRead(A_SP_IN), 0, 1023, 0, 1000);// Setpoint for PID(AUTO MODE)
+  float setpoint = fmap(analogRead(SP), 0, 1023, 0, 1000);// Setpoint for PID(AUTO MODE)
   float Y = fmap(analogRead(V_OUT), 0, 1023, 0, 1000);
 
   //Serial.print(setpoint);
@@ -85,9 +85,10 @@ void _auto(){
   U1 = U;
 
   //Salida del controlador
-  unsigned int uk = fmap(U, 0, 1000, 0, 254);
+  unsigned int uk = fmap(U, 0, 1000, 0, 255);
   analogWrite(V_IN, uk);
-  Serial.println(analogRead(A_SP_IN));
+  //Serial.println(uk); // Accion del controlador
+  //Serial.println(analogRead(V_OUT));// Salida controlada
   delay(10); // 10
 }// end auto
 
